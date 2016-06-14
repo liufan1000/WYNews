@@ -29,6 +29,8 @@
 		A130792C1D0FF37300F281DC /* WYNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A130792B1D0FF37300F281DC /* WYNewsListViewController.m */; };
 		A13079301D0FFA1000F281DC /* CZNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A130792F1D0FFA1000F281DC /* CZNetworkManager.m */; };
 		A13079341D0FFE3F00F281DC /* WYNewsListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A13079331D0FFE3F00F281DC /* WYNewsListItem.m */; };
+		A13079391D1000AE00F281DC /* WYNewsNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A13079371D1000AE00F281DC /* WYNewsNormalCell.m */; };
+		A130793A1D1000AE00F281DC /* WYNewsNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13079381D1000AE00F281DC /* WYNewsNormalCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,9 @@
 		A130792F1D0FFA1000F281DC /* CZNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZNetworkManager.m; sourceTree = "<group>"; };
 		A13079321D0FFE3F00F281DC /* WYNewsListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsListItem.h; sourceTree = "<group>"; };
 		A13079331D0FFE3F00F281DC /* WYNewsListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsListItem.m; sourceTree = "<group>"; };
+		A13079361D1000AE00F281DC /* WYNewsNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsNormalCell.h; sourceTree = "<group>"; };
+		A13079371D1000AE00F281DC /* WYNewsNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsNormalCell.m; sourceTree = "<group>"; };
+		A13079381D1000AE00F281DC /* WYNewsNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYNewsNormalCell.xib; sourceTree = "<group>"; };
 		A3848014A62E005EEA4656C1 /* Pods-网易新闻.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.release.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +229,7 @@
 		A13079291D0FF1EA00F281DC /* NewsList(新闻列表) */ = {
 			isa = PBXGroup;
 			children = (
+				A13079351D10007B00F281DC /* Views */,
 				A13079311D0FFE3400F281DC /* Model */,
 				A130792A1D0FF37300F281DC /* WYNewsListViewController.h */,
 				A130792B1D0FF37300F281DC /* WYNewsListViewController.m */,
@@ -248,6 +254,16 @@
 				A13079331D0FFE3F00F281DC /* WYNewsListItem.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A13079351D10007B00F281DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A13079361D1000AE00F281DC /* WYNewsNormalCell.h */,
+				A13079371D1000AE00F281DC /* WYNewsNormalCell.m */,
+				A13079381D1000AE00F281DC /* WYNewsNormalCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C5ED7C93C2FF61594D18A9F6 /* Pods */ = {
@@ -320,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A130793A1D1000AE00F281DC /* WYNewsNormalCell.xib in Resources */,
 				A13078F01D0FE21F00F281DC /* LaunchScreen.storyboard in Resources */,
 				A13078ED1D0FE21F00F281DC /* Assets.xcassets in Resources */,
 			);
@@ -395,6 +412,7 @@
 				A13079301D0FFA1000F281DC /* CZNetworkManager.m in Sources */,
 				A13079231D0FE46200F281DC /* WYMainViewController.m in Sources */,
 				A13079151D0FE44100F281DC /* NSString+CZBase64.m in Sources */,
+				A13079391D1000AE00F281DC /* WYNewsNormalCell.m in Sources */,
 				A13079141D0FE44100F281DC /* NSObject+CZRuntime.m in Sources */,
 				A130791D1D0FE44100F281DC /* UIViewController+CZAddition.m in Sources */,
 				A130791B1D0FE44100F281DC /* UIScreen+CZAddition.m in Sources */,
