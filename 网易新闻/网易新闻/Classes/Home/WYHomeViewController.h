@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WYHomeViewController.h
 //  网易新闻
 //
 //  Created by apple on 16/6/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface WYHomeViewController : UIViewController
 
 @end
-
