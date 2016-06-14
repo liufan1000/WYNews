@@ -20,11 +20,20 @@ static NSString *cellId = @"cellId";
     [super viewDidLoad];
     
     [self setupUI];
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - 加载数据
+- (void)loadData {
+    
+    [[CZNetworkManager sharedManager] newsListWithChannel:@"T1348649079062" start:0 completion:^(NSArray *array, NSError *error) {
+        NSLog(@"%@", array);
+    }]; 
 }
 
 #pragma mark - UITableViewDataSource

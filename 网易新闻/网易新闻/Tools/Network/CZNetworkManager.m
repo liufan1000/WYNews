@@ -20,6 +20,9 @@
         NSURL *baseURL = [NSURL URLWithString:@"http://c.m.163.com/nc/article/"];
         
         instance = [[self alloc] initWithBaseURL:baseURL];
+        
+        // 设置相应的解析格式
+        instance.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     });
     
     return instance;
@@ -27,7 +30,7 @@
 
 #pragma mark - 封装 AFN 网络请求
 /**
- * 发起 GET 请求
+ * 发起 GET 请求 － 之所以封装 GET 方法，为了保证替换网络框架使用！
  *
  * @param URLString  URLString
  * @param parameters 参数字典
@@ -53,7 +56,11 @@
     NSString *urlString = [NSString stringWithFormat:@"list/%@/%zd-20.html", channel, start];
     
     [self GETRequest:urlString parameters:nil completion:^(id json, NSError *error) {
-        NSLog(@"%@", json);
+
+        // 使用频道作为 key 获取数组
+        NSArray *array = json[channel];
+        
+        completion(array, error);
     }];
 }
 
