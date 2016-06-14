@@ -33,6 +33,7 @@
 		A130793A1D1000AE00F281DC /* WYNewsNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13079381D1000AE00F281DC /* WYNewsNormalCell.xib */; };
 		A130793E1D1007C900F281DC /* WYNewsExtraImagesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A130793C1D1007C900F281DC /* WYNewsExtraImagesCell.m */; };
 		A130793F1D1007C900F281DC /* WYNewsExtraImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A130793D1D1007C900F281DC /* WYNewsExtraImagesCell.xib */; };
+		A13079421D100BEB00F281DC /* WYNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A13079411D100BEB00F281DC /* WYNewsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,8 @@
 		A130793B1D1007C900F281DC /* WYNewsExtraImagesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsExtraImagesCell.h; sourceTree = "<group>"; };
 		A130793C1D1007C900F281DC /* WYNewsExtraImagesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsExtraImagesCell.m; sourceTree = "<group>"; };
 		A130793D1D1007C900F281DC /* WYNewsExtraImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYNewsExtraImagesCell.xib; sourceTree = "<group>"; };
+		A13079401D100BEB00F281DC /* WYNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsCell.h; sourceTree = "<group>"; };
+		A13079411D100BEB00F281DC /* WYNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsCell.m; sourceTree = "<group>"; };
 		A3848014A62E005EEA4656C1 /* Pods-网易新闻.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.release.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +267,8 @@
 		A13079351D10007B00F281DC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A13079401D100BEB00F281DC /* WYNewsCell.h */,
+				A13079411D100BEB00F281DC /* WYNewsCell.m */,
 				A13079361D1000AE00F281DC /* WYNewsNormalCell.h */,
 				A13079371D1000AE00F281DC /* WYNewsNormalCell.m */,
 				A13079381D1000AE00F281DC /* WYNewsNormalCell.xib */,
@@ -422,6 +427,7 @@
 				A13079301D0FFA1000F281DC /* CZNetworkManager.m in Sources */,
 				A13079231D0FE46200F281DC /* WYMainViewController.m in Sources */,
 				A13079151D0FE44100F281DC /* NSString+CZBase64.m in Sources */,
+				A13079421D100BEB00F281DC /* WYNewsCell.m in Sources */,
 				A13079391D1000AE00F281DC /* WYNewsNormalCell.m in Sources */,
 				A13079141D0FE44100F281DC /* NSObject+CZRuntime.m in Sources */,
 				A130791D1D0FE44100F281DC /* UIViewController+CZAddition.m in Sources */,

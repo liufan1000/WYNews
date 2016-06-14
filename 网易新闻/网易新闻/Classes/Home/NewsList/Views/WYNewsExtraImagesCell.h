@@ -7,14 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WYNewsCell.h"
 
-@interface WYNewsExtraImagesCell : UITableViewCell
-
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *replyLabel;
-
-@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *extraIcon;
+@interface WYNewsExtraImagesCell : WYNewsCell
 
 @end

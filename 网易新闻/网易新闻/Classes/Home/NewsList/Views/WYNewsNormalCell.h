@@ -7,12 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WYNewsCell.h"
 
-@interface WYNewsNormalCell : UITableViewCell
-
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *replyLabel;
+@interface WYNewsNormalCell : WYNewsCell
 
 @end

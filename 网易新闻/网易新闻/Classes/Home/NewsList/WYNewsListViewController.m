@@ -10,6 +10,8 @@
 #import "WYNewsListItem.h"
 #import "WYNewsNormalCell.h"
 #import "WYNewsExtraImagesCell.h"
+#import "WYNewsCell.h"
+
 #import <UIImageView+WebCache.h>
 
 static NSString *normalCellId = @"normalCellId";
@@ -75,7 +77,7 @@ static NSString *extraCellId = @"extraCellId";
     }
     
     // TODO: 处理 Cell 的不同！
-    WYNewsExtraImagesCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    WYNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
     // 2. 设置数据
     cell.titleLabel.text = model.title;
