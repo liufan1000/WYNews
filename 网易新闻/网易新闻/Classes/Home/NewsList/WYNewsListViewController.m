@@ -8,6 +8,8 @@
 
 #import "WYNewsListViewController.h"
 #import "WYNewsListItem.h"
+#import "WYNewsNormalCell.h"
+#import <UIImageView+WebCache.h>
 
 static NSString *cellId = @"cellId";
 
@@ -59,9 +61,19 @@ static NSString *cellId = @"cellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    WYNewsNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
-    cell.textLabel.text = _newsList[indexPath.row].title;
+    // 1. 取出模型
+    WYNewsListItem *model = _newsList[indexPath.row];
+    
+    // 2. 设置数据
+    cell.titleLabel.text = model.title;
+    cell.sourceLabel.text = model.source;
+    cell.replyLabel.text = @(model.replyCount).description;
+    
+    // 设置图片
+    NSURL *imageURL = [NSURL URLWithString:model.imgsrc];
+    [cell.iconView sd_setImageWithURL:imageURL];
     
     return cell;
 }
@@ -79,7 +91,11 @@ static NSString *cellId = @"cellId";
     }];
     
     // 注册原型 cell
-    [tv registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsNormalCell" bundle:nil] forCellReuseIdentifier:cellId];
+    
+    // 设置自动行高
+    tv.estimatedRowHeight = 100;
+    tv.rowHeight = UITableViewAutomaticDimension;
     
     // 设置数据源和代理
     tv.dataSource = self;
