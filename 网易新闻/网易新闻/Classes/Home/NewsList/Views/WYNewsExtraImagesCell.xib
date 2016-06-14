@@ -73,6 +73,14 @@
                     <constraint firstItem="k1z-sl-Dbj" firstAttribute="top" secondItem="Pnc-6r-aRd" secondAttribute="top" id="urn-eU-9rM"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="iconView" destination="6BC-aw-fXF" id="eT8-3O-1gN"/>
+                <outlet property="replyLabel" destination="ihd-Bi-Z6u" id="eor-af-n8b"/>
+                <outlet property="sourceLabel" destination="A4F-pm-aLL" id="5CZ-0N-ZkP"/>
+                <outlet property="titleLabel" destination="KuT-dU-sbc" id="LBs-0L-F6c"/>
+                <outletCollection property="extraIcon" destination="Pnc-6r-aRd" id="bsF-KI-g7e"/>
+                <outletCollection property="extraIcon" destination="k1z-sl-Dbj" id="JuX-hT-ndS"/>
+            </connections>
             <point key="canvasLocation" x="422" y="441.5"/>
         </tableViewCell>
     </objects>
