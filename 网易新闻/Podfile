@@ -1,0 +1,9 @@
+platform :ios, '8.0'
+
+target '网易新闻' do
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'FMDB'
+pod 'Masonry'
+pod 'YYModel'
+end
