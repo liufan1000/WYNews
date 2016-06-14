@@ -27,7 +27,7 @@
 - (void)addChildViewControllers {
     
     // 设置 tabBar 的字体颜色
-    self.tabBar.tintColor = [UIColor cz_colorWithHex:0xDF0000];
+    // self.tabBar.tintColor = [UIColor cz_colorWithHex:0xDF0000];
     
     // 视图控制器的字典数组
     NSArray *array = @[
