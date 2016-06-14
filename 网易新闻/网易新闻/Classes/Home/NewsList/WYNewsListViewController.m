@@ -12,7 +12,8 @@
 #import "WYNewsExtraImagesCell.h"
 #import <UIImageView+WebCache.h>
 
-static NSString *cellId = @"cellId";
+static NSString *normalCellId = @"normalCellId";
+static NSString *extraCellId = @"extraCellId";
 
 @interface WYNewsListViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) UITableView *tableView;
@@ -62,10 +63,19 @@ static NSString *cellId = @"cellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    WYNewsExtraImagesCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    
-    // 1. 取出模型
+    // 根据模型判断 cellId
     WYNewsListItem *model = _newsList[indexPath.row];
+    
+    NSString *cellId;
+    
+    if (model.imgextra.count > 0) {
+        cellId = extraCellId;
+    } else {
+        cellId = normalCellId;
+    }
+    
+    // TODO: 处理 Cell 的不同！
+    WYNewsExtraImagesCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
     // 2. 设置数据
     cell.titleLabel.text = model.title;
@@ -105,8 +115,8 @@ static NSString *cellId = @"cellId";
     }];
     
     // 注册原型 cell
-    // [tv registerNib:[UINib nibWithNibName:@"WYNewsNormalCell" bundle:nil] forCellReuseIdentifier:cellId];
-    [tv registerNib:[UINib nibWithNibName:@"WYNewsExtraImagesCell" bundle:nil] forCellReuseIdentifier:cellId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsNormalCell" bundle:nil] forCellReuseIdentifier:normalCellId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsExtraImagesCell" bundle:nil] forCellReuseIdentifier:extraCellId];
     
     // 设置自动行高
     tv.estimatedRowHeight = 100;
