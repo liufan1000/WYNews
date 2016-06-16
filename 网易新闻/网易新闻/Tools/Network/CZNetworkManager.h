@@ -21,4 +21,12 @@
  */
 - (void)newsListWithChannel:(NSString *)channel start:(NSInteger)start completion:(void (^)(NSArray *array, NSError *error))completion;
 
+/**
+ * 使用 docId 加载新闻明细
+ *
+ * @param docId      文档编号
+ * @param completion 完成回调[字典/错误]
+ */
+- (void)newsDetailWithDocId:(NSString *)docId completion:(void (^)(NSDictionary *dict, NSError *error))completion;
+
 @end

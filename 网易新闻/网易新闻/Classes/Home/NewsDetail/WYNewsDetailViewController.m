@@ -24,7 +24,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"接收到的模型 %@", _item);
+    // NSLog(@"接收到的模型 %@", _item);
+    [self loadData];
+}
+
+- (void)loadData {
+    
+    [[CZNetworkManager sharedManager] newsDetailWithDocId:_item.docid completion:^(NSDictionary *dict, NSError *error) {
+       
+        NSLog(@"%@", dict);
+    }];
 }
 
 @end

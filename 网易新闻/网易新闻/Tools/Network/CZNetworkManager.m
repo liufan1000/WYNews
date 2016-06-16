@@ -64,4 +64,16 @@
     }];
 }
 
+- (void)newsDetailWithDocId:(NSString *)docId completion:(void (^)(NSDictionary *, NSError *))completion {
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@/full.html", docId];
+    
+    [self GETRequest:urlString parameters:nil completion:^(id json, NSError *error) {
+       
+        // NSLog(@"%@", json);
+        // 完成回调
+        completion(json[docId], error);
+    }];
+}
+
 @end
