@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <AFNetworkActivityIndicatorManager.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // 设置网络指示器 - 非常重要的一个用户体验！
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    
+    // 设置外观
     [self setupAppearance];
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
