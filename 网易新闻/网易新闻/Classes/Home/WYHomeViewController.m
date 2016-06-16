@@ -79,7 +79,7 @@
     
     [pc.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.channelView.mas_bottom);
-        make.left.right.equalTo(self.view);
+        make.left.right.bottom.equalTo(self.view);
     }];
     
     // 5. 完成子控制器的添加
