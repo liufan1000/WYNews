@@ -28,4 +28,21 @@
     return l;
 }
 
+- (void)setScale:(float)scale {
+    
+    _scale = scale;
+    
+    // 最大缩放比例 18 -> 14 (1.0 -> 0.0)
+    float max = (float)kSelectedSize / kNormalSize;
+    // scale = 0
+    float min = 1;
+    
+    // (18 / 14 - 1) * 1 + min
+    // scale == 0 => s = 1
+    float s = (max - 1) * scale + min;
+    
+    // 设置 label 的形变
+    self.transform = CGAffineTransformMakeScale(s, s);
+}
+
 @end

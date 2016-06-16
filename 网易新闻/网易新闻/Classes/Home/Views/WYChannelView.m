@@ -30,7 +30,7 @@
     _channelList = channelList;
     
     // 1. 初始数据准备
-    CGFloat x = 20;
+    CGFloat x = 30;
     CGFloat margin = 8;
     CGFloat height = _scrollView.bounds.size.height;
     
@@ -56,6 +56,24 @@
     // 取消滚动指示器
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.showsHorizontalScrollIndicator = NO;
+    
+    // 设置第 0 个标签的比例 1
+    [self changeLableWithIndex:0 scale:1.0];
+}
+
+/**
+ * 修改指定 index label 的 scale 值
+ *
+ * @param index 标签的索引值
+ * @param scale 缩放比例 0 ~ 1
+ */
+- (void)changeLableWithIndex:(NSInteger)index scale:(float)scale {
+    
+    // 1. 根据 index 取出对应的 label
+    WYChannelLabel *l = _scrollView.subviews[index];
+    
+    // 2. 设置索引
+    l.scale = scale;
 }
 
 @end

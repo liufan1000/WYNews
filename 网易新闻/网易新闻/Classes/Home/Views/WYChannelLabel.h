@@ -18,4 +18,12 @@
  */
 + (instancetype)channelLabelWithTitle:(NSString *)title;
 
+/**
+ * 假定 scale 的值 0 ~ 1
+ *
+ * == 0，字体大小 14 号，黑色
+ * == 1，字体大小 18 号，红色
+ */
+@property (nonatomic, assign) float scale;
+
 @end
