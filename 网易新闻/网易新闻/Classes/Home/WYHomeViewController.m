@@ -9,6 +9,7 @@
 #import "WYHomeViewController.h"
 #import "WYChannelView.h"
 #import "WYChannel.h"
+#import "WYNewsListViewController.h"
 
 @interface WYHomeViewController ()
 /**
@@ -52,6 +53,37 @@
     
     // 记录成员变量
     _channelView = cv;
+    
+    // 2. 设置分页控制器
+    [self setupPageController];
+}
+
+/**
+ * 添加分页控制器
+ */
+- (void)setupPageController {
+    
+    // 1. 实例化控制器
+    UIPageViewController *pc = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
+    // 2. 设置分页控制器的`子控制器（新闻列表控制器）`
+    WYNewsListViewController *vc = [WYNewsListViewController new];
+    
+    [pc setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    // 3. 将分页控制器当作子控制器添加到当前控制器
+    [self addChildViewController:pc];
+    
+    // 4. 添加视图，并且完成自动布局
+    [self.view addSubview:pc.view];
+    
+    [pc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.channelView.mas_bottom);
+        make.left.right.equalTo(self.view);
+    }];
+    
+    // 5. 完成子控制器的添加
+    [pc didMoveToParentViewController:self];
 }
 
 @end
