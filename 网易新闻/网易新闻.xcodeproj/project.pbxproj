@@ -39,6 +39,7 @@
 		A1D477A51D1243A2001013E5 /* WYChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D477A41D1243A2001013E5 /* WYChannelView.m */; };
 		A1D477A81D1246FE001013E5 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = A1D477A71D1246FE001013E5 /* topic_news.json */; };
 		A1D477AB1D12470C001013E5 /* WYChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D477AA1D12470C001013E5 /* WYChannel.m */; };
+		A1D477D11D1251BE001013E5 /* WYChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D477D01D1251BE001013E5 /* WYChannelLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,8 @@
 		A1D477A71D1246FE001013E5 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
 		A1D477A91D12470C001013E5 /* WYChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYChannel.h; sourceTree = "<group>"; };
 		A1D477AA1D12470C001013E5 /* WYChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYChannel.m; sourceTree = "<group>"; };
+		A1D477CF1D1251BE001013E5 /* WYChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYChannelLabel.h; sourceTree = "<group>"; };
+		A1D477D01D1251BE001013E5 /* WYChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYChannelLabel.m; sourceTree = "<group>"; };
 		A3848014A62E005EEA4656C1 /* Pods-网易新闻.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.release.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +301,8 @@
 				A1D477A11D124270001013E5 /* WYChannelView.xib */,
 				A1D477A31D1243A2001013E5 /* WYChannelView.h */,
 				A1D477A41D1243A2001013E5 /* WYChannelView.m */,
+				A1D477CF1D1251BE001013E5 /* WYChannelLabel.h */,
+				A1D477D01D1251BE001013E5 /* WYChannelLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 				A13079151D0FE44100F281DC /* NSString+CZBase64.m in Sources */,
 				A13079421D100BEB00F281DC /* WYNewsCell.m in Sources */,
 				A13079141D0FE44100F281DC /* NSObject+CZRuntime.m in Sources */,
+				A1D477D11D1251BE001013E5 /* WYChannelLabel.m in Sources */,
 				A130791D1D0FE44100F281DC /* UIViewController+CZAddition.m in Sources */,
 				A130791B1D0FE44100F281DC /* UIScreen+CZAddition.m in Sources */,
 				A13078E21D0FE21F00F281DC /* main.m in Sources */,
