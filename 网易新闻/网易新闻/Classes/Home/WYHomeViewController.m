@@ -11,6 +11,7 @@
 #import "WYChannel.h"
 #import "WYNewsListItem.h"
 #import "WYNewsListViewController.h"
+#import "WYNewsDetailViewController.h"
 
 extern NSString *const WYNewsListDidSelectedDocNotification;
 
@@ -72,6 +73,16 @@ extern NSString *const WYNewsListDidSelectedDocNotification;
     // 获取通知的对象
     WYNewsListItem *model = n.object;
     
+    // 创建视图控制器
+    WYNewsDetailViewController *vc = [WYNewsDetailViewController new];
+    
+    vc.item = model;
+    
+    // 隐藏底部栏
+    vc.hidesBottomBarWhenPushed = YES;
+    
+    // PUSH
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - KVO 的监听方法

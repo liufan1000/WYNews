@@ -40,6 +40,7 @@
 		A1D477A81D1246FE001013E5 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = A1D477A71D1246FE001013E5 /* topic_news.json */; };
 		A1D477AB1D12470C001013E5 /* WYChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D477AA1D12470C001013E5 /* WYChannel.m */; };
 		A1D477D11D1251BE001013E5 /* WYChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D477D01D1251BE001013E5 /* WYChannelLabel.m */; };
+		A1D477FD1D12C41E001013E5 /* WYNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D477FC1D12C41E001013E5 /* WYNewsDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,8 @@
 		A1D477AA1D12470C001013E5 /* WYChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYChannel.m; sourceTree = "<group>"; };
 		A1D477CF1D1251BE001013E5 /* WYChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYChannelLabel.h; sourceTree = "<group>"; };
 		A1D477D01D1251BE001013E5 /* WYChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYChannelLabel.m; sourceTree = "<group>"; };
+		A1D477FB1D12C41E001013E5 /* WYNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsDetailViewController.h; sourceTree = "<group>"; };
+		A1D477FC1D12C41E001013E5 /* WYNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsDetailViewController.m; sourceTree = "<group>"; };
 		A3848014A62E005EEA4656C1 /* Pods-网易新闻.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.release.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +248,8 @@
 		A13079281D0FF1EA00F281DC /* NewsDetail(新闻详情) */ = {
 			isa = PBXGroup;
 			children = (
+				A1D477FB1D12C41E001013E5 /* WYNewsDetailViewController.h */,
+				A1D477FC1D12C41E001013E5 /* WYNewsDetailViewController.m */,
 			);
 			name = "NewsDetail(新闻详情)";
 			path = NewsDetail;
@@ -471,6 +476,7 @@
 				A1D477A51D1243A2001013E5 /* WYChannelView.m in Sources */,
 				A1D4779F1D123B7F001013E5 /* UIImageView+CZ_WebImage.m in Sources */,
 				A13079151D0FE44100F281DC /* NSString+CZBase64.m in Sources */,
+				A1D477FD1D12C41E001013E5 /* WYNewsDetailViewController.m in Sources */,
 				A13079421D100BEB00F281DC /* WYNewsCell.m in Sources */,
 				A13079141D0FE44100F281DC /* NSObject+CZRuntime.m in Sources */,
 				A1D477D11D1251BE001013E5 /* WYChannelLabel.m in Sources */,
