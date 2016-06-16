@@ -24,9 +24,19 @@
     // 3. 设置小字体
     l.font = [UIFont systemFontOfSize:kNormalSize];
     
-    // 4. 返回标签，返回的 bounds 是 大字体的撑开的 bounds
+    // 4. 开启用户交互
+    l.userInteractionEnabled = YES;
+    
+    // 5. 返回标签，返回的 bounds 是 大字体的撑开的 bounds
     return l;
 }
+
+/**
+ * 在视图内部实现，无法在外部监听
+ */
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    NSLog(@"%s %@", __FUNCTION__, self.text);
+//}
 
 // 提示：这种缩放比例的公式是固定的，可以记在笔记本中，如果开发时碰到，直接抄！
 - (void)setScale:(float)scale {

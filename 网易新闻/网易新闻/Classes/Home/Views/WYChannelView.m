@@ -46,7 +46,12 @@
         // 3. 递增 x
         x += l.bounds.size.width + margin;
         
-        // 4. 添加到滚动视图
+        // 4. 添加手势识别
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLabel:)];
+        
+        [l addGestureRecognizer:tap];
+        
+        // 5. 添加到滚动视图
         [_scrollView addSubview:l];
     }
     
@@ -59,6 +64,17 @@
     
     // 设置第 0 个标签的比例 1
     [self changeLableWithIndex:0 scale:1.0];
+}
+
+/**
+ - touch: 方法实现在视图的内部，不便于外部的监听，如果用 touch 还需要通过代理或者自定义控件传递事件
+ - 手势: 可以直接在外部添加视图的手势识别，便于监听！
+ */
+- (void)tapLabel:(UITapGestureRecognizer *)recognizer {
+    // 获取 手势识别的 视图
+    WYChannelLabel *l = (WYChannelLabel *)recognizer.view;
+    
+    NSLog(@"%@", l.text);
 }
 
 /**
