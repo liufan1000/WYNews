@@ -28,6 +28,7 @@
     return l;
 }
 
+// 提示：这种缩放比例的公式是固定的，可以记在笔记本中，如果开发时碰到，直接抄！
 - (void)setScale:(float)scale {
     
     _scale = scale;
@@ -43,6 +44,10 @@
     
     // 设置 label 的形变
     self.transform = CGAffineTransformMakeScale(s, s);
+    
+    // 颜色!!! 的技巧很重要
+    // scale == 1 红色，scale == 0 黑色
+    self.textColor = [UIColor colorWithRed:scale green:0 blue:0 alpha:1.0];
 }
 
 @end
