@@ -39,18 +39,17 @@
 //}
 
 // 提示：这种缩放比例的公式是固定的，可以记在笔记本中，如果开发时碰到，直接抄！
+// 0 ~ 1
+// 14 ~ 18
 - (void)setScale:(float)scale {
     
     _scale = scale;
     
-    // 最大缩放比例 18 -> 14 (1.0 -> 0.0)
+    // 在默认的基础上做放大 1 ~ 2
+    // 最大缩放比例 14 -> 18 (1.0 -> 0.0)
+    // max > 1
     float max = (float)kSelectedSize / kNormalSize;
-    // scale = 0
-    float min = 1;
-    
-    // (18 / 14 - 1) * 1 + min
-    // scale == 0 => s = 1
-    float s = (max - 1) * scale + min;
+    float s = 1 + scale * (max - 1);
     
     // 设置 label 的形变
     self.transform = CGAffineTransformMakeScale(s, s);
