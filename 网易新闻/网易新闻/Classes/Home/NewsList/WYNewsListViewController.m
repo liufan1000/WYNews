@@ -10,6 +10,11 @@
 #import "WYNewsListItem.h"
 #import "WYNewsCell.h"
 
+/**
+ * 新闻列表选中新闻文档通知
+ */
+NSString *const WYNewsListDidSelectedDocNotification = @"WYNewsListDidSelectedDocNotification";
+
 static NSString *normalCellId = @"normalCellId";
 static NSString *extraCellId = @"extraCellId";
 static NSString *bigImageCellId = @"bigImageCellId";
@@ -64,6 +69,16 @@ static NSString *headerCellId = @"headerCellId";
         // 刷新表格
         [self.tableView reloadData];
     }]; 
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // NSLog(@"%@", _newsList[indexPath.row]);
+    WYNewsListItem *model = _newsList[indexPath.row];
+    
+    // 发送通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:WYNewsListDidSelectedDocNotification object:model];
 }
 
 #pragma mark - UITableViewDataSource
