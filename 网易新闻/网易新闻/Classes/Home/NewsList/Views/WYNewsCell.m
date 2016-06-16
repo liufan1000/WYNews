@@ -8,7 +8,6 @@
 
 #import "WYNewsCell.h"
 #import "WYNewsListItem.h"
-#import <UIImageView+WebCache.h>
 
 @interface WYNewsCell()
 
@@ -37,20 +36,14 @@
     _replyLabel.text = @(newsItem.replyCount).description;
     
     // 设置图片
-    NSURL *imageURL = [NSURL URLWithString:newsItem.imgsrc];
-    [_iconView sd_setImageWithURL:imageURL];
+    [_iconView cz_setImageWithURLString:newsItem.imgsrc];
     
     // 设置多图 － 如果没有不会进入循环
     NSInteger idx = 0;
     for (NSDictionary *dict in newsItem.imgextra) {
         
-        // 1. 获取url字符串
-        NSURL *url = [NSURL URLWithString:dict[@"imgsrc"]];
-        
-        // 2. 设置图像
-        UIImageView *iv = _extraIcon[idx++];
-        
-        [iv sd_setImageWithURL:url];
+        // 设置图像
+        [_extraIcon[idx++] cz_setImageWithURLString:dict[@"imgsrc"]];
     }
 }
 

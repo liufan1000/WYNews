@@ -10,8 +10,6 @@
 #import "WYNewsListItem.h"
 #import "WYNewsCell.h"
 
-#import <UIImageView+WebCache.h>
-
 static NSString *normalCellId = @"normalCellId";
 static NSString *extraCellId = @"extraCellId";
 static NSString *bigImageCellId = @"bigImageCellId";

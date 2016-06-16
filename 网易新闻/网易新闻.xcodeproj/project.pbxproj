@@ -34,6 +34,7 @@
 		A13079421D100BEB00F281DC /* WYNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A13079411D100BEB00F281DC /* WYNewsCell.m */; };
 		A1D4779A1D1235E6001013E5 /* WYNewsBigImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D477991D1235E6001013E5 /* WYNewsBigImageCell.xib */; };
 		A1D4779C1D123835001013E5 /* WYNewsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D4779B1D123835001013E5 /* WYNewsHeaderCell.xib */; };
+		A1D4779F1D123B7F001013E5 /* UIImageView+CZ_WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D4779E1D123B7F001013E5 /* UIImageView+CZ_WebImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,8 @@
 		A13079411D100BEB00F281DC /* WYNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsCell.m; sourceTree = "<group>"; };
 		A1D477991D1235E6001013E5 /* WYNewsBigImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYNewsBigImageCell.xib; sourceTree = "<group>"; };
 		A1D4779B1D123835001013E5 /* WYNewsHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYNewsHeaderCell.xib; sourceTree = "<group>"; };
+		A1D4779D1D123B7F001013E5 /* UIImageView+CZ_WebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CZ_WebImage.h"; sourceTree = "<group>"; };
+		A1D4779E1D123B7F001013E5 /* UIImageView+CZ_WebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CZ_WebImage.m"; sourceTree = "<group>"; };
 		A3848014A62E005EEA4656C1 /* Pods-网易新闻.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.release.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +252,8 @@
 			children = (
 				A130792E1D0FFA1000F281DC /* CZNetworkManager.h */,
 				A130792F1D0FFA1000F281DC /* CZNetworkManager.m */,
+				A1D4779D1D123B7F001013E5 /* UIImageView+CZ_WebImage.h */,
+				A1D4779E1D123B7F001013E5 /* UIImageView+CZ_WebImage.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -423,6 +428,7 @@
 				A130792C1D0FF37300F281DC /* WYNewsListViewController.m in Sources */,
 				A13079301D0FFA1000F281DC /* CZNetworkManager.m in Sources */,
 				A13079231D0FE46200F281DC /* WYMainViewController.m in Sources */,
+				A1D4779F1D123B7F001013E5 /* UIImageView+CZ_WebImage.m in Sources */,
 				A13079151D0FE44100F281DC /* NSString+CZBase64.m in Sources */,
 				A13079421D100BEB00F281DC /* WYNewsCell.m in Sources */,
 				A13079141D0FE44100F281DC /* NSObject+CZRuntime.m in Sources */,
