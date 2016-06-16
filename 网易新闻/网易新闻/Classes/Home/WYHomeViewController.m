@@ -171,6 +171,38 @@
 #pragma mark - 监听方法
 - (void)didSelectedIndex:(WYChannelView *)cv {
     NSLog(@"选中的标签索引是 %zd", cv.selectedIndex);
+    
+    // 0. 判断是否就是当前选中的控制器，如果是，什么都不做，直接返回
+    NSInteger idx = cv.selectedIndex;
+    
+    if (_currentListVC.channelIndex == idx) {
+        NSLog(@"沙耶不做");
+        
+        return;
+    }
+    
+    // 1. 设置选中标签的显示比例(变大)
+    [_channelView changeLableWithIndex:idx scale:1.0];
+    
+    // 2. 设置之前标签的显示比例(变小)
+    [_channelView changeLableWithIndex:_currentListVC.channelIndex scale:0];
+    
+    // 3. 设置列表控制器的内容
+    // 1> 创建列表控制器
+    WYNewsListViewController *vc = [[WYNewsListViewController alloc] initWithChannelId:_channelList[idx].tid index:idx];
+    
+    // 2> 设置分页控制器的视图
+    NSInteger dir = UIPageViewControllerNavigationDirectionForward;
+    
+    // 选中前面的标签
+    if (idx < _currentListVC.channelIndex) {
+        dir = UIPageViewControllerNavigationDirectionReverse;
+    }
+    
+    [_pageViewController setViewControllers:@[vc] direction:dir animated:YES completion:nil];
+    
+    // 3> 记录当前的控制器
+    _currentListVC = vc;
 }
 
 #pragma mark - 设置界面
@@ -212,6 +244,9 @@
     
     // 2. 设置分页控制器的`子控制器（新闻列表控制器）`
     WYNewsListViewController *vc = [[WYNewsListViewController alloc] initWithChannelId:_channelList[0].tid index:0];
+    
+    // 记录当前的列表控制
+    _currentListVC = vc;
     
     [pc setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
