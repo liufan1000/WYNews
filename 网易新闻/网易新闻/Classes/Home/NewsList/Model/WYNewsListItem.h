@@ -39,5 +39,8 @@
  * 是否大图标记
  */
 @property (nonatomic, assign) BOOL imgType;
-
+/**
+ * 是否是顶部 Cell
+ */
+@property (nonatomic, assign) BOOL hasHead;
 @end
