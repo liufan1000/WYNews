@@ -11,7 +11,7 @@
 #import "WYChannel.h"
 #import "WYNewsListViewController.h"
 
-@interface WYHomeViewController () <UIPageViewControllerDataSource>
+@interface WYHomeViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 /**
  * 频道视图
  */
@@ -33,6 +33,33 @@
     
     // 2. 设置数据
     _channelView.channelList = _channelList;
+}
+
+#pragma mark - UIPageViewControllerDelegate
+/**
+ 问题：不能监听滚动的过程动作！只能监听到开始和结束
+ 
+ * [pageViewController.view subviews[0]] 是一个滚动视图
+ * KVO 专门用来监听对象的属性变化！
+ */
+// 将要展现下一个控制器
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<WYNewsListViewController *> *)pendingViewControllers {
+    
+    // 当前的控制器数组
+    NSLog(@"当前的控制器 %@", [pageViewController.viewControllers valueForKey:@"channelIndex"]);
+    
+    // 要显示的控制器数组
+    NSLog(@"要显示的控制器 %@", [pendingViewControllers valueForKey:@"channelIndex"]);
+    
+    // 输出滚动视图
+    NSLog(@"%@", [pageViewController.view subviews][0]);
+}
+
+// 完成展现控制器动画
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<WYNewsListViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
+    
+    // 前一个控制器数组
+    NSLog(@"%@", [previousViewControllers valueForKey:@"channelIndex"]);
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -131,8 +158,9 @@
     // 5. 完成子控制器的添加
     [pc didMoveToParentViewController:self];
     
-    // 6. 设置数据源
+    // 6. 设置数据源和代理
     pc.dataSource = self;
+    pc.delegate = self;
 }
 
 @end
