@@ -11,7 +11,7 @@
 #import "WYChannel.h"
 #import "WYNewsListViewController.h"
 
-@interface WYHomeViewController ()
+@interface WYHomeViewController () <UIPageViewControllerDataSource>
 /**
  * 频道视图
  */
@@ -25,15 +25,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 0. 加载频道数据
+    _channelList = [WYChannel channelList];
+    
     // 1. 设置 UI
     [self setupUI];
-    
-    // 加载频道数据
-    _channelList = [WYChannel channelList];
     
     // 2. 设置数据
     _channelView.channelList = _channelList;
 }
+
+#pragma mark - UIPageViewControllerDataSource
+//// 返回前一个控制器
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+//    
+//}
+//
+//// 返回后一个控制器
+//- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+//    
+//}
 
 #pragma mark - 设置界面
 - (void)setupUI {
@@ -70,7 +81,7 @@
     UIPageViewController *pc = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     
     // 2. 设置分页控制器的`子控制器（新闻列表控制器）`
-    WYNewsListViewController *vc = [WYNewsListViewController new];
+    WYNewsListViewController *vc = [[WYNewsListViewController alloc] initWithChannelId:_channelList[0].tid index:0];
     
     [pc setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
@@ -87,6 +98,9 @@
     
     // 5. 完成子控制器的添加
     [pc didMoveToParentViewController:self];
+    
+    // 6. 设置数据源
+    pc.dataSource = self;
 }
 
 @end
