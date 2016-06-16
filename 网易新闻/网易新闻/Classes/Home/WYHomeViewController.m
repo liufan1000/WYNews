@@ -168,6 +168,11 @@
     return vc;
 }
 
+#pragma mark - 监听方法
+- (void)didSelectedIndex:(WYChannelView *)cv {
+    NSLog(@"选中的标签索引是 %zd", cv.selectedIndex);
+}
+
 #pragma mark - 设置界面
 - (void)setupUI {
     
@@ -189,6 +194,9 @@
     
     // 记录成员变量
     _channelView = cv;
+    
+    // 添加监听方法
+    [cv addTarget:self action:@selector(didSelectedIndex:) forControlEvents:UIControlEventValueChanged];
     
     // 2. 设置分页控制器
     [self setupPageController];

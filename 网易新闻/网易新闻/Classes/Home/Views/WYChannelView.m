@@ -35,6 +35,7 @@
     CGFloat height = _scrollView.bounds.size.height;
     
     // 向 scrollView 添加控件
+    NSInteger idx = 0;
     for (WYChannel *channel in channelList) {
         
         // 1. 创建标签 - 已经计算好合适的 label 的宽度
@@ -50,6 +51,9 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLabel:)];
         
         [l addGestureRecognizer:tap];
+        
+        // 设置 label 的 tag
+        l.tag = idx++;
         
         // 5. 添加到滚动视图
         [_scrollView addSubview:l];
@@ -74,7 +78,13 @@
     // 获取 手势识别的 视图
     WYChannelLabel *l = (WYChannelLabel *)recognizer.view;
     
-    NSLog(@"%@", l.text);
+    NSLog(@"%@ %zd", l.text, l.tag);
+    
+    // 1> 记录属性值
+    _selectedIndex = l.tag;
+    
+    // 2> 发送控件事件
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 /**
