@@ -67,9 +67,41 @@
             body = [body stringByReplacingCharactersInRange:range withString:imgStr];
         }
         
+        // 循环遍历 video 数组
+        for (NSDictionary *dict in video) {
+            
+            // 1> 获取 ref 的内容
+            NSString *ref = dict[@"ref"];
+            
+            // 2> 在 body 中查找 ref 的位置
+            NSRange range = [body rangeOfString:ref];
+            
+            // 3> 判断是否找到
+            if (range.location == NSNotFound) {
+                continue;
+            }
+            
+            // 4> 替换 body range 对应的内容
+            NSString *videoStr = [NSString stringWithFormat:@"<video src=\"%@\"></video>", dict[@"m3u8_url"]];
+            body = [body stringByReplacingCharactersInRange:range withString:videoStr];
+        }
+        
+        // 将 css 字符串拼接在 body 的前面
+        body = [[self cssString] stringByAppendingString:body];
+        
         // 4. 显示页面
         [self.webView loadHTMLString:body baseURL:nil];
     }];
+}
+
+/**
+ * 从 bundle 加载 css 样式字符串
+ */
+- (NSString *)cssString {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"news.css" ofType:nil];
+    
+    return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
 }
 
 @end

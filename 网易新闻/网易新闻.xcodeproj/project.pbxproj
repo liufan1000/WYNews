@@ -41,6 +41,7 @@
 		A1D477AB1D12470C001013E5 /* WYChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D477AA1D12470C001013E5 /* WYChannel.m */; };
 		A1D477D11D1251BE001013E5 /* WYChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D477D01D1251BE001013E5 /* WYChannelLabel.m */; };
 		A1D477FD1D12C41E001013E5 /* WYNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D477FC1D12C41E001013E5 /* WYNewsDetailViewController.m */; };
+		A1D477FF1D12CBD9001013E5 /* news.css in Resources */ = {isa = PBXBuildFile; fileRef = A1D477FE1D12CBD9001013E5 /* news.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		A1D477D01D1251BE001013E5 /* WYChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYChannelLabel.m; sourceTree = "<group>"; };
 		A1D477FB1D12C41E001013E5 /* WYNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsDetailViewController.h; sourceTree = "<group>"; };
 		A1D477FC1D12C41E001013E5 /* WYNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsDetailViewController.m; sourceTree = "<group>"; };
+		A1D477FE1D12CBD9001013E5 /* news.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = news.css; sourceTree = "<group>"; };
 		A3848014A62E005EEA4656C1 /* Pods-网易新闻.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.release.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +250,7 @@
 		A13079281D0FF1EA00F281DC /* NewsDetail(新闻详情) */ = {
 			isa = PBXGroup;
 			children = (
+				A1D477FE1D12CBD9001013E5 /* news.css */,
 				A1D477FB1D12C41E001013E5 /* WYNewsDetailViewController.h */,
 				A1D477FC1D12C41E001013E5 /* WYNewsDetailViewController.m */,
 			);
@@ -394,6 +397,7 @@
 			files = (
 				A130793A1D1000AE00F281DC /* WYNewsNormalCell.xib in Resources */,
 				A1D4779A1D1235E6001013E5 /* WYNewsBigImageCell.xib in Resources */,
+				A1D477FF1D12CBD9001013E5 /* news.css in Resources */,
 				A1D477A81D1246FE001013E5 /* topic_news.json in Resources */,
 				A1D4779C1D123835001013E5 /* WYNewsHeaderCell.xib in Resources */,
 				A130793F1D1007C900F281DC /* WYNewsExtraImagesCell.xib in Resources */,
