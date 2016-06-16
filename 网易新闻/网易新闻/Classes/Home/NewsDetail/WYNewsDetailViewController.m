@@ -19,6 +19,31 @@
     _webView = [UIWebView new];
     
     self.view = _webView;
+    
+    // 创建 NavBar
+    UINavigationBar *navBar = [[UINavigationBar alloc] init];
+    
+    [self.view addSubview:navBar];
+    
+    [navBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(self.view);
+        // 高度是 64 包含了状态栏的高度
+        make.height.mas_equalTo(64);
+    }];
+    
+    // 设置标题 - 需要通过 UINavigationItem
+    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"新闻内容"];
+    navBar.items = @[item];
+    
+    // 设置返回按钮
+    item.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    
+    // 设置 contentInset
+    _webView.scrollView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
+}
+
+- (void)back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad {
