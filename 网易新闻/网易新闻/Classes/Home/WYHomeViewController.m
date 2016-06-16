@@ -40,6 +40,9 @@
     
     self.view.backgroundColor = [UIColor cz_randomColor];
     
+    // 0. 取消自动调整滚动视图间距
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     // 1. 添加频道视图
     WYChannelView *cv = [WYChannelView channelView];
     
