@@ -32,6 +32,7 @@
 		A130793A1D1000AE00F281DC /* WYNewsNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A13079381D1000AE00F281DC /* WYNewsNormalCell.xib */; };
 		A130793F1D1007C900F281DC /* WYNewsExtraImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A130793D1D1007C900F281DC /* WYNewsExtraImagesCell.xib */; };
 		A13079421D100BEB00F281DC /* WYNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A13079411D100BEB00F281DC /* WYNewsCell.m */; };
+		A1D4779A1D1235E6001013E5 /* WYNewsBigImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D477991D1235E6001013E5 /* WYNewsBigImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		A130793D1D1007C900F281DC /* WYNewsExtraImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYNewsExtraImagesCell.xib; sourceTree = "<group>"; };
 		A13079401D100BEB00F281DC /* WYNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsCell.h; sourceTree = "<group>"; };
 		A13079411D100BEB00F281DC /* WYNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsCell.m; sourceTree = "<group>"; };
+		A1D477991D1235E6001013E5 /* WYNewsBigImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYNewsBigImageCell.xib; sourceTree = "<group>"; };
 		A3848014A62E005EEA4656C1 /* Pods-网易新闻.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.release.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -265,6 +267,7 @@
 				A13079411D100BEB00F281DC /* WYNewsCell.m */,
 				A13079381D1000AE00F281DC /* WYNewsNormalCell.xib */,
 				A130793D1D1007C900F281DC /* WYNewsExtraImagesCell.xib */,
+				A1D477991D1235E6001013E5 /* WYNewsBigImageCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A130793A1D1000AE00F281DC /* WYNewsNormalCell.xib in Resources */,
+				A1D4779A1D1235E6001013E5 /* WYNewsBigImageCell.xib in Resources */,
 				A130793F1D1007C900F281DC /* WYNewsExtraImagesCell.xib in Resources */,
 				A13078F01D0FE21F00F281DC /* LaunchScreen.storyboard in Resources */,
 				A13078ED1D0FE21F00F281DC /* Assets.xcassets in Resources */,
