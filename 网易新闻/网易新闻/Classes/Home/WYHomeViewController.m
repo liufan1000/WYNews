@@ -16,6 +16,16 @@
  * 频道视图
  */
 @property (nonatomic, weak) WYChannelView *channelView;
+
+/**
+ * 分页控制器
+ */
+@property (nonatomic, weak) UIPageViewController *pageViewController;
+
+/**
+ * 分页控制器内部的滚动视图
+ */
+@property (nonatomic, weak) UIScrollView *pageScrollView;
 @end
 
 @implementation WYHomeViewController {
@@ -35,12 +45,28 @@
     _channelView.channelList = _channelList;
 }
 
+#pragma mark - KVO 的监听方法
+/**
+ * 是 KVO 统一调用的监听方法
+ *
+ * @param keyPath 监听的 keyPath(属性)
+ * @param object  监听的对象，可以通过对象获得属性值
+ * @param change  监听的变化
+ * @param context 上下文，一般是 NULL
+ */
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    
+    // NSLog(@"%@ %@ %@", keyPath, object, change);
+    NSLog(@"===> %@", NSStringFromCGPoint(_pageScrollView.contentOffset));
+}
+
 #pragma mark - UIPageViewControllerDelegate
 /**
  问题：不能监听滚动的过程动作！只能监听到开始和结束
  
  * [pageViewController.view subviews[0]] 是一个滚动视图
  * KVO 专门用来监听对象的属性变化！
+ * KVO 是观察者模式，除了 KVO 还有通知，在不需要使用时，应该注销观察者
  */
 // 将要展现下一个控制器
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<WYNewsListViewController *> *)pendingViewControllers {
@@ -52,14 +78,22 @@
     NSLog(@"要显示的控制器 %@", [pendingViewControllers valueForKey:@"channelIndex"]);
     
     // 输出滚动视图
-    NSLog(@"%@", [pageViewController.view subviews][0]);
+    // NSLog(@"%@", [pageViewController.view subviews][0]);
+    NSLog(@"%@", _pageScrollView);
+    
+    // KVO 监听滚动视图
+    [_pageScrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:NULL];
 }
 
 // 完成展现控制器动画
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<WYNewsListViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
     
     // 前一个控制器数组
-    NSLog(@"%@", [previousViewControllers valueForKey:@"channelIndex"]);
+    NSLog(@"滚动结束 %@", [previousViewControllers valueForKey:@"channelIndex"]);
+    
+    // 注销滚动视图的观察 - 一旦注销观察者，后续分页控制器的复位导致的 contentOffset 不再监听！
+    // 保证监听的数值变化就是一个完整屏幕的变化！
+    [_pageScrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -161,6 +195,13 @@
     // 6. 设置数据源和代理
     pc.dataSource = self;
     pc.delegate = self;
+    
+    // 7. 记录成员变量
+    _pageViewController = pc;
+    
+    if ([pc.view.subviews[0] isKindOfClass:[UIScrollView class]]) {
+        _pageScrollView = pc.view.subviews[0];
+    }
 }
 
 @end
