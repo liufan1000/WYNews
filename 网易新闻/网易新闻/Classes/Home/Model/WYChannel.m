@@ -31,7 +31,11 @@
     // 5. 字典转模型 -> 模型的数组
     NSArray *modelArray = [NSArray yy_modelArrayWithClass:[self class] json:array];
     
-    return modelArray;
+    return [modelArray sortedArrayUsingComparator:^NSComparisonResult(WYChannel *obj1, WYChannel *obj2) {
+        
+        // 对 tid 进行升序排列
+        return [obj1.tid compare:obj2.tid];
+    }];
 }
 
 
