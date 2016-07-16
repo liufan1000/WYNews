@@ -112,7 +112,7 @@ extern NSString *const WYNewsListDidSelectedDocNotification;
     
     CGFloat scale = offsetX / width;
     
-    NSLog(@"%f 从 %zd 到 %zd", scale, _currentListVC.channelIndex, _nextListVC.channelIndex);
+//    NSLog(@"%f 从 %zd 到 %zd", scale, _currentListVC.channelIndex, _nextListVC.channelIndex);
     // scale 0 -> 1
     // 头条 1 -> 0
     // 社会 0 -> 1
@@ -148,7 +148,10 @@ extern NSString *const WYNewsListDidSelectedDocNotification;
     NSLog(@"%@", _pageScrollView);
     
     // KVO 监听滚动视图
-    [_pageScrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:NULL];
+    if (_pageScrollView.tag == 0) {
+        [_pageScrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:NULL];
+        _pageScrollView.tag = 1;
+    }
 }
 
 // 完成展现控制器动画
@@ -159,7 +162,10 @@ extern NSString *const WYNewsListDidSelectedDocNotification;
     
     // 注销滚动视图的观察 - 一旦注销观察者，后续分页控制器的复位导致的 contentOffset 不再监听！
     // 保证监听的数值变化就是一个完整屏幕的变化！
-    [_pageScrollView removeObserver:self forKeyPath:@"contentOffset"];
+    if (_pageScrollView.tag == 1) {        
+        [_pageScrollView removeObserver:self forKeyPath:@"contentOffset"];
+        _pageScrollView.tag = 0;
+    }
 }
 
 #pragma mark - UIPageViewControllerDataSource
