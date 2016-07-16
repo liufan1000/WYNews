@@ -21,7 +21,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
-  - YYModel (1.0.3)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
@@ -35,8 +35,8 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
-  YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 66549d315dc335a1cd4786074d9f207f9fd686f3
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.beta.1
